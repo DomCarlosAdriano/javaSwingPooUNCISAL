@@ -8,10 +8,12 @@ import java.sql.ResultSet;
 
 public class ConexaoBD {
 
+    //Usamos a palavra final aqui na URL do banco de dados para definir uma constante.
+    //Isso garante que o endereço do banco nunca seja alterado durante a execução do programa.
     private static final String URL = "jdbc:sqlite:passagens.db";
-    public static Connection getConexao() throws SQLException {
 
-        // O DriverManager tentará carregar o driver do SQLite
+    //aquilo que é static é compartilhado por todos os objetos, é único, e não precisa um objeto para usar.
+    public static Connection getConexao() throws SQLException {
         return DriverManager.getConnection(URL);
     }
 
